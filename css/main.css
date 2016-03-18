@@ -1,13 +1,165 @@
 * {
 	box-sizing: border-box;
 	font-family: 'Open Sans', sans-serif;
-	animation: fadein 0.8s;
+	animation: fadein 1s;
 }
-	
 
 body {
 	margin: 0;
 	border: 0;
+	padding-top: 0;
+}
+
+/* PRELOADER */
+/*
+#pre-loader {
+    width: 100%;
+    height: 100vh;
+    top: 0; right: 0; bottom: 0; left: 0;
+	position: relative;
+	overflow: hidden;
+    z-index: 1000;
+    background-color: #704f50;
+    display: flex;
+	border: solid 10px #fff;
+	justify-content: center;
+	flex-direction: row;
+}
+
+.loading {
+	margin: auto;
+	font-weight: 600;
+	flex-direction: row;
+}
+
+.shape {
+	width: 150px;
+	height: 150px;
+	background-color: rgba(255,255,255,0.1);
+	border-radius: 100px;
+	border: 5px dotted #fff;
+	animation: rotate 0.5s infinite;
+    transform: rotate(0deg);
+    animation-delay: 1s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}*/
+
+
+/* MENU YEAHHHHH */
+
+.cross {
+	padding-left: 82%;
+}
+
+.cross:hover {
+	color: grey;
+}
+
+#menu1, #menu2, #menu3 {
+    z-index: 1000;
+	font-size: 15px;
+	color: #fff;
+	font-weight: 600;
+	box-shadow: 0px 1px 296px 86px rgba(0,0,0,0.3);
+	display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    padding-top: 30px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+#coffee-menu, #snacks-menu, #sweets-menu {
+	display: flex;
+    width: 60%;
+    margin: 0 auto;
+}
+
+#coffee-menu, .text-drink {
+	background: #B6C8A9;
+}
+
+#snacks-menu, .text-snacks {
+	background: #8E9AAF;
+}
+
+#sweets-menu, .text-sweets {
+	background: #FFA69E;
+}
+
+.text-drink, .text-snacks, .text-sweets {
+	padding-right: 20px;
+}
+
+.column-menu h3 {
+	font-family: 'Lora', serif;
+	font-size: 40px;
+	margin: 20px;
+	padding-left: 13px;
+}
+
+.text-menu {
+	display: flex;
+	text-align: left;
+	vertical-align: center;
+}
+
+#coffee-menu li, #snacks-menu li, #sweets-menu li {
+	font-family: 'Lora', serif;
+	list-style-type: none;
+}
+
+
+.items li, .spaces li, .prices li {
+	padding-bottom: 16px;
+}
+
+
+/* FIRST NAVBAR rgba(249,240,175,1) */
+
+.nav-bar {
+	position: fixed;
+	z-index: 500;
+	text-align: center;
+	margin: 0 auto;
+	width: 100vw;
+	background: rgba(255,255,255,1);
+	transition: top 0.2s ease-in-out;
+	box-shadow: 10px 10px 18px -10px rgba(0,0,0,0.26);
+}
+
+.nav-bar a {
+	text-decoration: none;
+	color: #704f50;
+	padding: 0 35px;
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.nav-bar a:hover {
+	color: #f0a979;
+}
+
+.nav-bar ul {
+	padding: 0;
+	margin: 10px 0;
+}
+
+.nav-bar ul, .nav-bar li {
+	display: inline-block;
+	list-style-type: none;
 }
 
 
@@ -17,8 +169,8 @@ body {
 	width: 100%;
     height: 100vh;
     top: 0; right: 0; bottom: 0; left: 0;
-    border: 5px solid #f9f0af;
-	background: #704f50 url(../img/bg.png) center fixed;
+    /*border: 5px solid #f9f0af;*/
+	background: #704f50 url(../img/bg.png) center no-repeat fixed;
 	position: relative;
 	overflow: hidden;
 }
@@ -26,10 +178,24 @@ body {
 /* LOGO SVG */
 
 .logo-animated {
-	display: block;
+	display: flex;
 	position: absolute;
 	width: 90%;
 	left: 8%;
+}
+
+.my-svg-alternate {
+	display: none;
+}
+
+.no-smil .my-svg-alternate {
+  display: block;
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 90px;
+  background: url(../img/svg.png) no-repeat center;
+  top:180px;
 }
 
 /* CAPTION BUTTON */
@@ -39,7 +205,7 @@ body {
 	position: relative;
 	top: 280px;
 	animation: fadein 2s;
-	animation-delay: 3.5s;
+	animation-delay: 2.5s;
 	animation-fill-mode:forwards;
 	opacity: 0;
 }
@@ -93,39 +259,42 @@ body {
 
 #about-brew {
 	width: 100%;
-    height: 100vh;
+    height: 100%;
     top: 0; right: 0; bottom: 0; left: 0;
-    border: 5px solid #704F50;
 	background: #B6C8A9;
 	background: linear-gradient(to right, #B6C8A9 , #99CC99);
 	position: relative;
 	overflow: hidden;
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 }
 
-
-.typograph {
-	max-width: 250px;
-	display: block;
+.picture {
+	width: 500px;
+	height: 666px;
+	background: url(../img/about-bg.jpg) fixed no-repeat;
+	background-size: contain;
+	margin-right: 5em;
 }
 
 .paragraph {
-	margin: 15vh 0;
+	padding-top: 150px;
+	display: block;
+	width: 80%;
+	margin-right: 3em;
 }
 
 .paragraph p {
 	text-align: justify;
-	max-width: 340px;
 	font-weight: 400;
 	color: #704F50;
-	font-size: 13px;
-	padding-top: 50px;
-	padding-bottom: 50px;
+	font-size: 15px;
 }
 
-.paragraph img {
-	padding-right: 5px;
+.paragraph h2 {
+	color: #fff;
+	font-weight: 600;
+	font-style: italic;
 }
 
 
@@ -135,14 +304,17 @@ body {
 	width: 100%;
     height: 100vh;
     top: 0; right: 0; bottom: 0; left: 0;
-    border: 5px solid #704F50;
     background: #F0A979 url(../img/menu-bg.png) repeat fixed center;
 	position: relative;
 	overflow: hidden;
 	display: flex;
-	justify-content: space-around;
+    align-items: center;
+    justify-content: center;
 }
 
+/*#beverage-click:hover {
+	width: 100%;
+}*/
 
 #snack-click > #bg-snack circle,
 #beverage-click > #bg-beverage circle,
@@ -158,10 +330,13 @@ body {
 	transition-duration: 1s;
 }
 
-.buttons {
-	padding-top: 9%;
+#beverage-click, #snack-click, #sweet-click {
+	max-width: 98%;
 }
 
+.menu-buttons {
+	padding: 9% 0;
+}
 
 /* GALLERY SECTION SECTION */
 
@@ -169,7 +344,7 @@ body {
 	width: 100%;
     height: 100%;
     top: 0; right: 0; bottom: 0; left: 0;
-    background: #F9F0AF;
+    background: #fff;
 	position: relative;
 	overflow: hidden;
 	display: flex;
@@ -179,66 +354,305 @@ body {
 }
 
 .first, .second, .third {
-	display: inline;
 	width: 100%;
-    height: auto;
-}
-
-.first {
-	align-self: flex-start;
-}
-
-.second {
-	max-width: 50%;
-}
-
-.third {
-	align-self: flex-end;
 }
 
 .one {
-    margin-top: auto;
+	background: url(../img/1.jpg);
+	background-size: cover;
+	height: 215px;
+	text-align: center;
 }
 
 .two {
-	background-image: url(../img/two-bg.png);
+	background: url(../img/2.jpg);
+	background-size: cover;
+	height: 215px;
+	text-align: center;
+}
+
+.three {
+	background: url(../img/3.jpg);
+	background-size: cover;
+	height: 215px;
+	text-align: center;
 }
 
 .four {
-	background-image: url(../img/four-bg.png);
-	margin-top: auto;
+	background: url(../img/4.jpg);
+	background-size: cover;
+	height: 215px;
+	text-align: center;
 }
 
 .five {
+	background: url(../img/5.jpg);
+	background-size: cover;
+	height: 215px;
+	text-align: center;
 }
 
-.seven {
+.six {
+	background: url(../img/6.jpg);
+	background-size: cover;
+	height: 215px;
+	text-align: center;
 }
 
-.eight {
-	background-image: url(../img/two-bg.png);
+.text1 {
+	visibility: hidden;
+	margin: 0;
+	color: #fff;
+	font-size: 30px;
+	font-weight: 400;
+	font-style: italic;
+	padding-top: 18%;
+}
+
+.hover-me:hover {
+	box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
+	transition-duration: 0.5s;
+}
+
+.hover-me:hover > .text1 {
+	visibility: visible;
+	transition-delay: 0.1s;
+	transition-duration: 0.5s;
 }
 
 
-
-
-
-/* CONTACT SECTION SECTION #EF959C*/
-
+/* CONTACT SECTION SECTION */
 
 #contact-section {
 	width: 100%;
-    height: 100vh;
+    height: 100%;
     top: 0; right: 0; bottom: 0; left: 0;
-    border: 5px solid #704F50;
-	background: #FCDEE9;
+	background: rgba(249,240,175,0.2);
+	overflow: hidden;
+	text-align: center;
+	color: white;
+}
+
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+    animation: fadein 2s;
+	animation-delay: 3.5s;
+	animation-fill-mode:forwards;
+	opacity: 0;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: auto;
+    height: 100%;
+  }
+}
+
+.info {
+	padding-top: 60px;
+}
+
+.hours {
+	display: inline-block;
+	margin-left: 15px;
+}
+
+.marg {
+	margin-right: 18px;
+}
+
+.stroke {
+	border-right: 1px solid white;
+	padding-bottom: 45px;
+}
+
+.italics {
+	font-style: italic;
+}
+
+.social-media {
+	padding: 15px 0;
+}
+
+.social-media img {
+	width: 60px;
+}
+
+/* FOOTER SECTION SECTION #EF959C #EB5A98*/
+
+
+#footer-section {
+	width: 100%;
+    height: 100%;
+    top: 0; right: 0; bottom: 0; left: 0;
+	background: #fff;
 	position: relative;
 	overflow: hidden;
-	display: flex;
 	justify-content: space-around;
+	text-align: center;
+}
+
+#footer-section p {
+	font-size: 10px;
+}
+
+form {
+	padding: 25px 0;
+}
+
+input {
+	background-color: rgba(225,225,225,0.4);
+	color: white;
+	border: 2px solid white;
+	padding: 15px 38px;
+}
+
+.subscribe button {
+	background-color: rgb(153,204,153); /* Green 99CC99 pink #F0A979 */
+    border: 2px solid white;
+    color: white;
+    padding: 13px 38px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    transition-delay: 0.1s;
+	transition-duration: 0.3s;
+}
+
+.subscribe button:hover, button:active {
+	background-color: #9BAA8F;
+	border: 2px solid white;
+    color: white;
+	transition-delay: 0.1s;
+	transition-duration: 0.3s;
+}
+
+.name {
+	padding-top: 5px;
+}
+
+.name a {
+	text-decoration: none;
+	color: #FD1392;
+}
+
+@media only screen and (max-width: 850px) {
+
+	#coffee-menu, #snacks-menu, #sweets-menu {
+    width: inherit;
+}
 }
 
 
+@media only screen and (max-width: 1080px) {
+	#about-brew .picture {
+		display: none;
+		margin: 0;
+	}
 
+	#about-brew .paragraph {
+		margin: 0;
+		padding-bottom: 150px;
+	}
+
+	#about-brew .typograph {
+		padding-bottom: 20px;
+	}
+
+
+}
+
+@media only screen and (min-width: 721px) {
+
+	.paragraph {
+	width: 60%;
+    }
+
+
+	#menu-section {
+		height: 100%;
+	}
+
+}
+
+
+@media only screen and (max-width: 721px) {
+	.nav-bar {
+		display: none;
+	}
+
+	#menu-section {
+		max-width: 100%;
+	}
+
+	#menu-section {
+		flex-direction: column;
+		height: 100%;
+	} 
+
+	.menu-buttons {
+		padding: 5px 0;
+	}
+
+	.fullscreen-bg__video {
+		display: none;
+	}
+
+	.fullscreen-bg {
+		background: url(../img/vid-fallback.jpg) center;
+		background-position: cover;
+	}
+
+	.social-media img {
+	background-color: #B6C8A9;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+	.logo-animated {
+		margin-top: -60px;
+	}
+
+	.text {
+		top: 220px;
+	}
+
+	#about-brew .typograph {
+		display: none;
+	}
+
+	.paragraph {
+		padding-top: 60px;
+	}
+}
 
 
